@@ -1,0 +1,14 @@
+---
+export interface Props {
+  classAttr?: string;
+  imgClassAttrs?: string;
+}
+const { classAttr, imgClassAttrs } = Astro.props;
+---
+
+<div class={classAttr}>
+  <img
+    src="/JeffMusgrave-square.jpg"
+    class={`md:h-full object-cover ${imgClassAttrs}`}
+  />
+</div>

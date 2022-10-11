@@ -1,0 +1,12 @@
+---
+import Head from "../components/Head.astro";
+const { Content, frontmatter } = Astro.props;
+---
+
+<!-- <Head title={frontmatter.title} description={frontmatter.description} /> -->
+<div>
+  <h1>{frontmatter.heading}</h1>
+  <h2>{frontmatter.subheading}</h2>
+
+  <Content />
+</div>
