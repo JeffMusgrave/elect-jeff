@@ -1,0 +1,29 @@
+---
+// export interface Props {
+//   url: string;
+//   text: string;
+// }
+
+import Section from "./Section.astro";
+
+const { nav } = Astro.props;
+---
+
+<Section sticky={true}>
+  <div class="flex flex-row">
+    <nav role="navigation" class="hidden md:block">
+      <ul
+        class="flex flex-col h-[100vh] bg-white md:bg-transparent w-[100vw] absolute top-0 left-0 right-0 md:relative place-content-center md:flex-row md:place-content-start md:h-fit md:w-auto"
+      >
+        {
+          nav.map((item: any) => (
+            <li class="self-center">
+              <a href={item.url}>{item.text}</a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <div class="block md:hidden self-end">x</div>
+  </div>
+</Section>

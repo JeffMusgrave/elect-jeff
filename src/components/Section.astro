@@ -1,0 +1,16 @@
+---
+export interface Props {
+  sticky: boolean | undefined;
+  // classAttr: string | undefined;
+}
+
+const { sticky = false } = Astro.props as Props;
+---
+
+<section
+  class={`${
+    sticky && `sticky top-0`
+  } w-full flex items-center justify-center bg-red-200`}
+>
+  <article class="w-[90vw] max-w-screen-2xl bg-gray-400"><slot /></article>
+</section>
