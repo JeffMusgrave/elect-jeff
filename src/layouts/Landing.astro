@@ -1,12 +1,29 @@
 ---
-import Head from "../components/Head.astro";
-const { Content, frontmatter } = Astro.props;
+import Section from "../components/Section.astro";
+import Portrait from "../components/Portrait.astro";
+import Heading from "../components/Heading.astro";
+import Body from "../components/Body.astro";
 ---
 
-<!-- <Head title={frontmatter.title} description={frontmatter.description} /> -->
-<div>
-  <h1>{frontmatter.heading}</h1>
-  <h2>{frontmatter.subheading}</h2>
+<Section classAttrs="md:items-center">
+  <div class="flex flex-col md:flex-row md:gap-10 lg:items-center">
+    <div
+      class="flex flex-col flex-grow-0 gap-5 md:max-w-sm lg:max-w-2xl self-center"
+    >
+      <Heading
+        heading="Vote Jeff Musgrave"
+        subheading="for School Board Trustee"
+      />
+      <Portrait
+        classAttrs="h-[60vw] md:hidden overflow-hidden object-center"
+        imgClassAttrs="-mt-4"
+      />
+      <slot />
+    </div>
 
-  <Content />
-</div>
+    <Portrait
+      classAttrs="hidden md:flex lg:h-[80vh] lg:min-h-[40rem] lg:max-h-[45rem] lg:w-full flex-grow-1"
+      imgClassAttrs="place-self-center"
+    />
+  </div>
+</Section>
