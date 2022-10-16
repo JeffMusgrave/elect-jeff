@@ -1,5 +1,8 @@
 ---
 import Head from "../components/Head.astro";
+import "@fontsource/source-sans-3";
+import "@fontsource/source-sans-3/700-italic.css";
+
 export interface Props {
   title: string;
   description: string;
@@ -15,5 +18,11 @@ const { title, description } = Astro.props as Props;
     <main class="min-h-screen max-w-screen flex">
       <slot />
     </main>
+    <style>
+      body {
+        font-family: "Source Sans 3", sans-serif;
+        font-size: 1.25rem;
+      }
+    </style>
   </body>
 </html>
