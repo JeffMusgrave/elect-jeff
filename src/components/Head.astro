@@ -1,4 +1,5 @@
 ---
+import { SEO } from "astro-seo";
 export interface Props {
   title: string;
   description: string;
@@ -11,7 +12,37 @@ const { title, description } = Astro.props as Props;
   <meta charset="UTF-8" />
   <meta name="description" content={description} />
   <meta name="viewport" content="width=device-width" />
-  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+  <link rel="manifest" href="/site.webmanifest" />
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="https://www.electjeff.ca" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Vote Jeff Musgrave for school trustee." />
+  <meta
+    property="og:description"
+    content="Every child should have the opportunity to develop their unique talents to the fullest."
+  />
+  <meta
+    property="og:image"
+    content="https://www.electjeff.ca/social/JeffMusgrave-SchoolBoardTrustee-WaterlooRegionDistrictSchoolBoard-OG.png"
+  />
+
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:domain" content="electjeff.ca" />
+  <meta property="twitter:url" content="https://www.electjeff.ca" />
+  <meta name="twitter:title" content="Vote Jeff Musgrave for school trustee." />
+  <meta
+    name="twitter:description"
+    content="Every child should have the opportunity to develop their unique talents to the fullest."
+  />
+  <meta
+    name="twitter:image"
+    content="https://www.electjeff.ca/social/JeffMusgrave-SchoolBoardTrustee-WaterlooRegionDistrictSchoolBoard-Twitter.png"
+  />
 </head>
